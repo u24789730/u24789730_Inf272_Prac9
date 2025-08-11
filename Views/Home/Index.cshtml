@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Social Club Membership Campaign";
+}
+
+<main>
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary">Social Club Membership Campaign !!</h1>
+        <p class="lead">This web interface allows a prospective member to join a social club, switch club membership, and change membership status as desired. All changes are stored in a database</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title text-success">Register</h3>
+                    <p class="card-text">
+                        When this button is clicked then a member's information will be inserted into the database.
+                    </p>
+                    <a href="@Url.Action("InsertMember", "Home")" class="btn btn-primary">New membership</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title text-warning">Update</h3>
+                    <p class="card-text">
+                        When this button is clicked a member's old information in the database will be replaced in the database.
+                    </p>
+                    <a href="@Url.Action("UpdateMember", "Home")" class="btn btn-warning">Update membership</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title text-danger">Delete</h3>
+                    <p class="card-text">
+                        When this button is clicked then a member's data will be deleted from the database.
+                    </p>
+                    <a href="@Url.Action("Delete", "Home")" class="btn btn-danger">Terminate membership</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h4>Available Social Clubs:</h4>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><strong>Blue Sky</strong></li>
+                    <li class="list-inline-item"><strong>Rotary</strong></li>
+                    <li class="list-inline-item"><strong>Red Hat</strong></li>
+                    <li class="list-inline-item"><strong>Spicy</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>

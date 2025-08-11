@@ -1,0 +1,32 @@
+@{
+    ViewBag.Title = "Delete membership profile";
+}
+
+<div class="container">
+    <h2>Delete membership profile</h2>
+    
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert @(ViewBag.MessageType == "success" ? "alert-success" : "alert-danger") alert-dismissible fade show" role="alert">
+            @ViewBag.Message
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="alert alert-warning">
+        <strong>Warning:</strong> This action will permanently remove the member from the database. This cannot be undone.
+    </div>
+
+    @using (Html.BeginForm("Delete", "Home", FormMethod.Post, new { @class = "mt-4" }))
+    {
+        <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <input type="number" name="id" class="form-control" placeholder="Enter member ID to delete" required />
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this member? This action cannot be undone.')">Delete</button>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Home</a>
+        </div>
+    }
+</div> 
